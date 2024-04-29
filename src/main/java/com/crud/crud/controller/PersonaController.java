@@ -5,25 +5,21 @@ import com.crud.crud.service.IPersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sound.midi.Soundbank;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class PersonaController {
 
     @Autowired
     private IPersonaService iPersonaService;
 
     @GetMapping("/")
-    public String listar() {
-
-        return "lista de usuario" + iPersonaService.getAll();
-    }
-
-
-    /*@GetMapping("/")
     public String listar(Model model) {
         model.addAttribute("usuarios", iPersonaService.getAll());
         return "index";
@@ -79,6 +75,6 @@ public class PersonaController {
 
 
         return "redirect:/";
-    }*/
+    }
 
 }
